@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# Inventory Management
+
+# # OOAD_Project_PES - Inventory Management
 
 This project can be used as a starting point to create your own Vaadin application with Spring Boot.
 It contains all the necessary configuration and some placeholder files to get you started.
@@ -45,5 +45,5 @@ Once the JAR file is built, you can run it using
 - Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/vaadin) or join our [Discord channel](https://discord.gg/MYFq5RTbBn).
 - Report issues, create pull requests in [GitHub](https://github.com/vaadin).
 =======
-# OOAD_Project_PES
->>>>>>> 3697f563555d868fa09e1af29fa60c63fdeb912d
+
+
