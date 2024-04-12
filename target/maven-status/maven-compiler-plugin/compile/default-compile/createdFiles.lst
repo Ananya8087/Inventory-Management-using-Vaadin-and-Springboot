@@ -1,0 +1,11 @@
+com/example/application/components/appnav/AppNavItem.class
+com/example/application/views/MainLayout.class
+com/example/application/data/service/InventoryListService.class
+com/example/application/Application.class
+com/example/application/components/appnav/AppNav.class
+com/example/application/views/LoginView.class
+com/example/application/data/entity/InventoryList.class
+com/example/application/data/service/InventoryListRepository.class
+com/example/application/views/itemlist/ItemListView.class
+com/example/application/data/entity/AbstractEntity.class
+com/example/application/Application$1.class

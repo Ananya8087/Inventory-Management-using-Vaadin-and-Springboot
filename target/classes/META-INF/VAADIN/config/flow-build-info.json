@@ -1,0 +1,17 @@
+{
+  "productionMode": false,
+  "eagerServerLoad": false,
+  "npmFolder": "/Users/ananya/Desktop/6thsem/OOAD/project/OOAD_Project-main/inventory-management",
+  "node.version": "v18.14.1",
+  "node.download.root": "https://nodejs.org/dist/",
+  "generatedFolder": "/Users/ananya/Desktop/6thsem/OOAD/project/OOAD_Project-main/inventory-management/target/frontend",
+  "frontendFolder": "/Users/ananya/Desktop/6thsem/OOAD/project/OOAD_Project-main/inventory-management/frontend",
+  "connect.javaSourceFolder": "/Users/ananya/Desktop/6thsem/OOAD/project/OOAD_Project-main/inventory-management/src/main/java",
+  "javaResourceFolder": "/Users/ananya/Desktop/6thsem/OOAD/project/OOAD_Project-main/inventory-management/src/main/resources",
+  "connect.applicationProperties": "/Users/ananya/Desktop/6thsem/OOAD/project/OOAD_Project-main/inventory-management/src/main/resources/application.properties",
+  "connect.openApiFile": "/Users/ananya/Desktop/6thsem/OOAD/project/OOAD_Project-main/inventory-management/target/generated-resources/openapi.json",
+  "project.frontend.generated": "/Users/ananya/Desktop/6thsem/OOAD/project/OOAD_Project-main/inventory-management/frontend/generated",
+  "pnpm.enable": false,
+  "require.home.node": false,
+  "build.folder": "target"
+}
