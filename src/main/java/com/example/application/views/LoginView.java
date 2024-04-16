@@ -1,40 +1,49 @@
 package com.example.application.views;
 
+
+import com.example.application.views.util.DatabaseUtil;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.login.LoginForm;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
-import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.auth.AnonymousAllowed;
+import com.vaadin.flow.component.notification.Notification;
 
-@Route("login")
-@PageTitle("Login | Inventory")
-@AnonymousAllowed
-public class LoginView extends VerticalLayout implements BeforeEnterObserver {
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
-    private final LoginForm login = new LoginForm();
+@Route("")
+public class LoginView extends VerticalLayout {
 
-    public LoginView(){
-        addClassName("login-view");
-        setSizeFull();
-        setAlignItems(Alignment.CENTER);
-        setJustifyContentMode(JustifyContentMode.CENTER);
+    public LoginView() {
+        TextField username = new TextField("Username");
+        TextField password = new TextField("Password");
+        Button loginButton = new Button("Login");
 
-        login.setAction("login");
+        loginButton.addClickListener(e -> {
+            if (authenticate(username.getValue(), password.getValue())) {
+                // Navigate to the main inventory page
+                getUI().ifPresent(ui -> ui.navigate("master-detail"));
+            } else {
+                Notification.show("Invalid credentials!");
+            }
+        });
 
-        add(new H1("Inventory Management "), login);
+        add(new H1("Login"), username, password, loginButton);
     }
 
-    @Override
-    public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
-        // inform the user about an authentication error
-        if(beforeEnterEvent.getLocation()
-                .getQueryParameters()
-                .getParameters()
-                .containsKey("error")) {
-            login.setError(true);
+    private boolean authenticate(String username, String password) {
+        String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+            ResultSet rs = stmt.executeQuery();
+            return rs.next();  // Return true if a row is found
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
         }
     }
 }
