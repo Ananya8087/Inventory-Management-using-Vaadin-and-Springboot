@@ -44,7 +44,7 @@ import org.springframework.orm.ObjectOptimisticLockingFailureException;
 
 @PageTitle("Item List")
 @Route(value = "master-detail/:inventoryListID?/:action?(edit)", layout = MainLayout.class)
-//@RouteAlias(value = "", layout = MainLayout.class)
+@RouteAlias(value = "", layout = MainLayout.class)
 public class ItemListView extends Div implements BeforeEnterObserver {
 
     private final String INVENTORYLIST_ID = "inventoryListID";
